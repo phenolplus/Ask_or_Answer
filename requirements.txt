@@ -7,3 +7,4 @@ ipython==3.2.0
 psycopg2==2.6.1
 pyxdg==0.25
 static3==0.6.1
+team==1.0
