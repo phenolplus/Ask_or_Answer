@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>= Built from template =</title>
+		<style>
+			body {
+				background-color: lightyellow;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Hello !!! Today is {{current_time | date:"Y|m|d"}}</h1>
+		<hr>
+		{% if valid %}
+		<div>
+			<h4>{{ post.question }}</h4>
+			{{ post.answer }} <br>
+			<em>{{post.time_stamp}}  |  {{post.id}} </em>
+		</div>
+		{% else %}
+		<h4> All Questions have been answered </h4>
+		{% endif %}
+		<hr>
+		<form method="POST">
+			{% csrf_token %}
+			<h3>Ask(?) or Answer(!)</h3>
+			<input type="text" name="content">
+			{% if valid %}
+				<input type="hidden" value="{{ post.id }}" name="q_id">
+			{% endif %}
+			<input type="submit" value="Ask" name="__submit_ask">
+			<input type="submit" value="Answer" name="__submit_answer">
+		</form>
+	</body>
+</html>

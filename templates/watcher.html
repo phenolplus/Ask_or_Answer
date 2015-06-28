@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>= Watcher =</title>
+	<style>
+	body {
+		background-color: lightblue;
+	}
+	</style>
+</head>
+<body>
+	{% for post in post_list %}
+	<h2>Qusetion [{{ post.id }}]</h2>
+	<hr>
+		<div>
+		{{ post.question }}
+		</div>
+	<hr>
+	{% if post.answered %}
+		<div>
+		{{ post.answer }}
+		</div>
+	{% else %}
+		<h3>Pending Answer...</h3>
+	{% endif %}
+	<hr>
+	{% endfor %}
+</body>
+</html>
