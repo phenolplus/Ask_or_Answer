@@ -4,9 +4,9 @@ body {
   background-color: #fff;
 }
 .logo-bar {
-	text-align: center;
-	font-family: monospace;
-	font-size: 28px;
+	max-width: 330px;
+	display: block;
+	margin: 0 auto;
 }
 .question-holder {
 	text-align: center;
@@ -38,6 +38,7 @@ body {
 	color: #F6F6F1;
 	text-shadow: none;
 	border: medium none;
+	border-radius: 2px;
 }
 
 .ask-button {
