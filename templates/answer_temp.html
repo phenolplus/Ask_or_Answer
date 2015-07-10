@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>= Answer =</title>
-	<style>
-	body {
-		background-color: lightblue;
-	}
-	</style>
+	{% load staticfiles %}
+	<title>Answer[!]</title>
+	<link rel="stylesheet" href="{% static "ans_basic.css" %}" type="text/css">
 </head>
 <body>
-	<h2>Qusetion [{{ post.id }}]</h2>
-	<h3>Use {{ request.build_absolute_uri }} to Access this page</h3>
-	<hr>
-		<div>
+<img class="logo-bar" src="{% static "logo_w330.png" %}">
+	<p align="center">Use
+	<a href="{{ request.build_absolute_uri }}">
+	{{ request.build_absolute_uri }}
+	</a>
+	to Access this page</p>
+	<div class="box-holder">
+	Question:
+		<div class="box-holder">
 		{{ post.question }}
 		</div>
-	<hr>
+	Answer:
+		<div class="box-holder">
 	{% if post.answered %}
-		<div>
 		{{ post.answer }}
-		</div>
 	{% else %}
-		<h3>Pending Answer...</h3>
+		Pending Answer ...:)
 	{% endif %}
-	<hr>
-	<a href="{% url 'ask' %}">Checkout another question</a>
+		</div>
+	<a href="{% url 'ask' %}" class="ask-button button" >Ask another one</a>
+	</div>
 </body>
 </html>
